@@ -1,0 +1,13 @@
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+/* HEADER STYLES  */
+.header {
+  margin: 40px;
+}
+.title {
+  color: #4a4a4a;
+  font-size: 1em;
+  text-transform: uppercase;
+}
