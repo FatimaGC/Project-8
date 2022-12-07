@@ -4,6 +4,7 @@
 
 body {
   background-color: #fcfcfc;
+  position: relative;
 }
 
 /* HEADER STYLES  */
@@ -43,7 +44,9 @@ body {
 }
 
 .email,
-.address {
+.address,
+.phone,
+.birthday {
   color: #a3a8ab;
 }
 
@@ -54,6 +57,40 @@ body {
 }
 
 /* MODAL WINDOW STYLES */
-.hidden {
+/* .hidden {
   display: none;
+} */
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(100, 100, 100, 0.4);
+}
+
+.modal {
+  background-color: #fff;
+  border: 2px solid #cdcdcd;
+  border-radius: 5px;
+  margin: 10% auto;
+  padding: 30px 0;
+  position: relative;
+  text-align: center;
+  width: 375px;
+}
+
+.modal-content-divider {
+  background-color: #e6e6e6;
+  border: none;
+  height: 1px;
+  width: 80%;
+}
+
+.modal-close {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 10px;
 }
