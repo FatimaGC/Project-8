@@ -20,6 +20,7 @@ fetch(urlAPI).then((response) =>
     .catch((err) => console.log(err))
 );
 
+// FUNCTION TO DISPLAY EMPLOYEE DATA
 function displayEmployees(employeeData) {
   employees = employeeData;
 
@@ -32,7 +33,7 @@ function displayEmployees(employeeData) {
     let picture = employee.picture;
 
     employeeHTML += `
-      <div class="card">
+      <div class="card" data-index="${index}">
         <img class="profile-image" src="${picture.large}" alt="Profile photo of ${name}" />
         <div>
           <h2 class="name">${name.first} ${name.last}</h2>
