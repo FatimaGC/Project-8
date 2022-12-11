@@ -9,8 +9,9 @@ const urlAPI = `https://randomuser.me/api/?results=12&inc=name, picture,
 email, location, phone, dob &noinfo &nat=US`;
 let employees = [];
 const gridContainer = document.querySelector(".grid-container");
-const modalClose = document.querySelector(".modal-close");
 const modalContainer = document.querySelector(".modal-content");
+const overlay = document.querySelector(".overlay");
+const modalClose = document.querySelector(".modal-close");
 
 // FETCH API REQUEST
 fetch(urlAPI).then((response) =>
@@ -47,6 +48,15 @@ function displayEmployees(employeeData) {
   gridContainer.innerHTML = employeeHTML;
 }
 
+gridContainer.addEventListener("click", (event) => {
+  if (event.target !== gridContainer) {
+    const card = event.target.closest(".card");
+    const index = card.getAttribute("data-index");
+
+    displayModal(index);
+  }
+});
+
 function displayModal(index) {
   let {
     name,
@@ -74,7 +84,14 @@ function displayModal(index) {
               <p class="phone">${phone}</p>
               <p class="address">${street}, ${state} ${postcode}</p>
               <p class="birthday">Birthday: ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
+            </div>
   `;
   overlay.classList.remove("hidden");
   modalContainer.innerHTML = modalHTML;
 }
+
+// EVENT LISTENERS
+
+modalClose.addEventListener("click", () => {
+  overlay.classList.add("hidden");
+});

@@ -57,9 +57,9 @@ body {
 }
 
 /* MODAL WINDOW STYLES */
-.hidden {
+/* .hidden {
   display: none;
-}
+} */
 
 .overlay {
   position: absolute;
